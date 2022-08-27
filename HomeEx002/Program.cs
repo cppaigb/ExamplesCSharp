@@ -20,14 +20,26 @@
 
 //Метод, который показывает вторую цифру трехзначного числа
 
-int findSecondDigit(int threeDigitNumber)
+// int findSecondDigit(int threeDigitNumber)
+// {
+//     int secondDigit = (threeDigitNumber/10)%10;
+//     return secondDigit;
+// }
+
+// Console.Write("Введите 3-значное число - ");
+// int newThreeDigitNumber = Convert.ToInt32(Console.ReadLine());
+// int result = findSecondDigit(newThreeDigitNumber);
+
+// Console.WriteLine(result); 
+
+int secondDigit (int Number)
 {
-    int secondDigit = (threeDigitNumber/10)%10;
-    return secondDigit;
+    int DigitNumber2 = ((Number/10)%10);
+    return DigitNumber2;
 }
 
-Console.Write("Введите 3-значное число - ");
-int newThreeDigitNumber = Convert.ToInt32(Console.ReadLine());
-int result = findSecondDigit(newThreeDigitNumber);
+Console.Write("Введите трехзначное число: ");
+int inputNumber = Convert.ToInt32(Console.ReadLine());
+int result = secondDigit(inputNumber);
 
-Console.WriteLine(result); 
+Console.WriteLine(result);
