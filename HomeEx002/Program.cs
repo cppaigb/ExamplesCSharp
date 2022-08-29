@@ -1,45 +1,86 @@
-﻿// Console.Write("Введите трехзначное число: ");
-// // int NumberArray = Convert.ToInt32(Console.ReadLine());
-// int NumberArray = 546;
-
-// int[] array = new int[546];
-// Console.WriteLine(array);
-
-// // int n = array.Length;
-
-// // Console.WriteLine(array[1]);
-// Console.Clear();
-// Console.WriteLine("Задача 10 ");
-// Console.Write("Введи трёхзначное число: ");
-// int threeDigitNumber = Convert.ToInt32(Console.ReadLine());
-// string stringNumber = Convert.ToString(threeDigitNumber);
-// Console.WriteLine("вторая цифра этого числа -> "+stringNumber[1]);
-
-//Напишите программу, которая принимает на вход трёхзначное
-// число и на выходе показывает вторую цифру этого числа.
+﻿/* Напишите программу, которая принимает на вход трёхзначное
+число и на выходе показывает вторую цифру этого числа. */
 
 //Метод, который показывает вторую цифру трехзначного числа
 
-// int findSecondDigit(int threeDigitNumber)
-// {
-//     int secondDigit = (threeDigitNumber/10)%10;
-//     return secondDigit;
-// }
-
-// Console.Write("Введите 3-значное число - ");
-// int newThreeDigitNumber = Convert.ToInt32(Console.ReadLine());
-// int result = findSecondDigit(newThreeDigitNumber);
-
-// Console.WriteLine(result); 
-
-int secondDigit (int Number)
+int secondDigit(int inputNumber)
 {
-    int DigitNumber2 = ((Number/10)%10);
-    return DigitNumber2;
+    int DigitNumberTwo = ((inputNumber / 10) % 10);
+    return DigitNumberTwo;
 }
 
 Console.Write("Введите трехзначное число: ");
 int inputNumber = Convert.ToInt32(Console.ReadLine());
 int result = secondDigit(inputNumber);
 
-Console.WriteLine(result);
+while((inputNumber < 100) ^ (inputNumber > 999))
+{
+    Console.WriteLine("Вы ввели не трехзначное число, попробуйте ввести число еще раз:");
+    Console.Write("Введите трехзначное число: ");
+    inputNumber = Convert.ToInt32(Console.ReadLine());
+}
+Console.WriteLine($"Вторая цифра трехзначного числа: {result}");
+
+
+
+//===================================================================\\
+/*  Напишите программу, которая выводит третью цифру заданного числа 
+    или сообщает, что третьей цифры нет. */
+
+// int findThirdNumber(int number)
+// {
+//     while (number > 999)
+//     {
+//         number = number / 10;
+//     }
+//     int thirdNumber = number % 10;
+//     return thirdNumber;
+// }
+// Console.Write("Введите число: ");
+// int number = Convert.ToInt32(Console.ReadLine());
+// int result = findThirdNumber(number);
+
+// if (number > 99)
+// {
+//     Console.WriteLine($"Третья цифра заданного числа: {result}");
+// }
+// else
+// {
+//     Console.WriteLine("В заданном числе нет третьей цифры!");
+// }
+
+//=========================================================================\\
+
+/* Напишите программу, которая принимает на вход цифру, обозначающую день недели, 
+и проверяет, является ли этот день выходным. */
+
+// bool checkWeekend(int dayOfWeek)
+// {
+//     bool weekend = false;
+//     if (dayOfWeek > 5)
+//     {
+//         weekend = true;
+//         return weekend;
+//     }
+//     else
+//     {
+//         weekend = false;
+//         return weekend;
+//     }
+
+// }
+
+// Console.Write("Введите день недели: ");
+// int inputDay = Convert.ToInt32(Console.ReadLine());
+// bool result = checkWeekend(inputDay);
+
+// if ((inputDay < 1) ^ (inputDay > 7))
+// {
+//     Console.WriteLine("Такого дня недели не существует");
+// }
+// else
+// {
+//     Console.WriteLine(result);
+// }
+
+
