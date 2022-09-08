@@ -15,16 +15,16 @@ int [] RandomArray(int n)
 //метод вывода массива в консоль
 void PrintArray(int[] array)
 {
-    int n = array.Length;
-    for (int i = 0; i < n; i++)
+    int count = array.Length;
+    for (int i = 0; i < count; i++)
     {
-        Console.Write(array[i]);
-        if (i < n-1) Console.Write(", ");
+        Console.Write($"{array[i]} ");
     }
+    Console.WriteLine();
 }
 
 //метод ищет количество четных чисел в массиве
-int FindSumOfUneven (int[] array)
+int FindSumOfOddNumbers (int[] array)
 {
     int sum = 0;
     int length = array.Length;
@@ -36,12 +36,11 @@ int FindSumOfUneven (int[] array)
     return sum;
 }
 
-
 Console.Write("Введите кол-во элементов массива: ");
 int numberOfElements = Convert.ToInt32(Console.ReadLine());
 int[] newArray = RandomArray(numberOfElements);
+
 Console.Write("Массив состоит из следующих чисел: ");
 PrintArray(newArray);
-Console.WriteLine();
-int summ = FindSumOfUneven(newArray);
-Console.WriteLine($"Сумма элементов, стоящих на нечётных позициях: {summ}");
+int sum = FindSumOfOddNumbers(newArray);
+Console.WriteLine($"Сумма элементов, стоящих на нечётных позициях равна: {sum}");
