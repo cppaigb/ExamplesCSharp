@@ -15,14 +15,13 @@ double [] RandomArray(int n)
 //метод вывода массива в консоль
 void PrintArray(double[] array)
 {
-    double n = array.Length;
-    for (int i = 0; i < n; i++)
+    double count = array.Length;
+    for (int i = 0; i < count; i++)
     {
-        Console.Write(Math.Round(array[i],1));
-        if (i < n-1) Console.Write("   ");
+        Console.Write($"{array[i]} ");
     }
+    Console.WriteLine();
 }
-
 //метод ищет разницу между максимальным и минимальным элементом массива
 double FindDifferenceMaxAndMin (double[] array)
 {
@@ -39,14 +38,12 @@ double FindDifferenceMaxAndMin (double[] array)
     return diff;
 }
 
-//Задаем кол-во элементов массива
-Console.Write("Введите кол-во элементов массива - ");
+Console.Write("Введите кол-во элементов массива: ");
 int numberOfElements = Convert.ToInt32(Console.ReadLine());
-//Выводим рандомный массив
+
 double[] newArray = RandomArray(numberOfElements);
 Console.Write("Массив состоит из следующих чисел: ");
 PrintArray(newArray);
-Console.WriteLine();
-//Ищем разницу
 double res = FindDifferenceMaxAndMin(newArray);
-Console.WriteLine(Math.Round(res,1));
+Console.WriteLine($"Разница между максимальным и минимальным элементом массива: {Math.Round(res,4)}");
+
