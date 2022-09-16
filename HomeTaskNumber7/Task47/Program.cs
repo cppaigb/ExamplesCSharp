@@ -28,9 +28,9 @@ double[,] FillArray(int n, int m)
 }
 
 
-Console.Write("Введите число m: ");
+Console.Write("Введите количество строк m: ");
 int m = Convert.ToInt32(Console.ReadLine());
-Console.Write("Введите число n: ");
+Console.Write("Введите количество столбцов n: ");
 int n = Convert.ToInt32(Console.ReadLine());
 double[,] newArray = FillArray(m, n);
 Print2Array(newArray);

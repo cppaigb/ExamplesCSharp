@@ -39,6 +39,7 @@ if (isNumberN != true)
 {
     Console.WriteLine("Вы ввели не число");
     return;
+    
 }
 
 int amount = AmountDigitInNumber(inputNumber);

@@ -1,5 +1,5 @@
 ﻿// Выдает третий символ числа, проверяет на длину.
-
+/* 
 string input = Console.ReadLine();
 
 bool ValidateInput(string input)
@@ -34,4 +34,26 @@ if (!isValid) //! принимает false, переворачивает сим�
 }
 
 char result = GetThirdNumber(input);
-Console.WriteLine(result);
+Console.WriteLine(result); */
+
+
+/////////////////////////
+// Напишите программу, которая на вход принимает число (N), а на выходе показывает 
+// все чётные числа от 1 до N.
+
+// Math.Pow(in,2) - возведение в степент
+//Метод вывода массива на экран
+int array = Convert.ToInt32(Console.ReadLine());
+void PrintArray(int[] array)
+{
+    int i = 0;
+    int lenght=array.Length;
+
+    while(i<lenght)
+    {
+        Console.Write(array[i] + " ");
+        i++;
+    }
+}
+
+Math.Pow
