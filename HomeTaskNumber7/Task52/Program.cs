@@ -119,7 +119,8 @@ int n = Convert.ToInt32(Console.ReadLine());
 int[,] numbers = new int[m, n];
 FillArray2D(numbers);
 PrintArray2D(numbers);
-
+void AvgArray(double[,] array)
+{
 double[] avgNumbers = new double[numbers.GetLength(1)];
 
 for (int i = 0; i < numbers.GetLength(1); i++)
@@ -131,5 +132,7 @@ for (int i = 0; i < numbers.GetLength(1); i++)
     }
     avgNumbers[i] = result / numbers.GetLength(0);
 }
+}
+AvgArray(numbers);
 PrintArray(avgNumbers);
 
