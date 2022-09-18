@@ -1,9 +1,9 @@
 ﻿/*  Задайте двумерный массив. Напишите программу, которая упорядочит по убыванию 
  элементы каждой строки двумерного массива. */
 
- //метод выводит матрицу на экран
- 
- void PrintMatrix(int[,] matr)
+//метод выводит матрицу на экран
+
+void PrintMatrix(int[,] matr)
 {
 
     for (int i = 0; i < matr.GetLength(0); i++)
@@ -28,40 +28,25 @@ void FillArray(int[,] array)
         }
     }
 }
-//метод сортирует одномерный массив
-void SortArray(int[] array)
-{
-    for (int i = 0; i < array.Length - 1; i++)
-    {
-        int maxPosition = i;
-        for (int j = i + 1; j < array.Length; j++)
-        {
-            if (array[j] > array[maxPosition]) maxPosition = j;
-        }
-        int temp = array[i];
-        array[i] = array[maxPosition];
-        array[maxPosition] = temp;
-    }
-}
-
 // Метод соритует строки по убыванию в двумерном массиве
 void SortRowIn2DArray(int[,] array)
 {
-    for ( int i = 0; i < array.GetLength(0); i++)
+    for (int i = 0; i < array.GetLength(0); i++)
     {
-        int [ ] tempArray = new int[array.GetLength(1)];
-        for ( int j = 0; j < array.GetLength(1); j++)
-        {
-            tempArray[j] = array[i,j];
-        }
-        SortArray(tempArray);
         for (int j = 0; j < array.GetLength(1); j++)
         {
-            array[i,j] = tempArray[j];
+            for (int k = 0; k < array.GetLength(1) - 1; k++)
+            {
+                if (array[i, k] < array[i, k + 1])
+                {
+                    int temp = array[i, k + 1];
+                    array[i, k + 1] = array[i, k];
+                    array[i, k] = temp;
+                }
+            }
         }
-        
     }
-    
+
 }
 
 Console.Write("Введите количество столбцов m: ");
@@ -71,6 +56,6 @@ int n = Convert.ToInt32(Console.ReadLine());
 int[,] newArray = new int[m, n];
 FillArray(newArray);
 PrintMatrix(newArray);
-Console.WriteLine();
+Console.WriteLine("Отсортированный массив: ");
 SortRowIn2DArray(newArray);
 PrintMatrix(newArray);
