@@ -45,8 +45,13 @@ Console.Write("Введите количество столбцов m: ");
 int m = Convert.ToInt32(Console.ReadLine());
 Console.Write("Введите количество строк n: ");
 int n = Convert.ToInt32(Console.ReadLine());
-Console.Write("Введите i: ");
+Console.Write("Введите количество слоев i: ");
 int i = Convert.ToInt32(Console.ReadLine());
+
+if (n * m * i > 89) { Console.WriteLine("Вы вышли за предел чисел"); }
+else
+{
 int[,,] newArray = new int[m, n, i];
 FillArray(newArray);
 PrintIndex(newArray);
+}
