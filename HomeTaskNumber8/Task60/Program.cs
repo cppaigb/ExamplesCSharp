@@ -8,8 +8,8 @@ FillArray(array3D);
 PrintIndex(array3D);
 
 
-// Функция вывода индекса элементов 3D массива
-void PrintIndex(int[,,] arr)
+// Метод вывода индекса элементов 3D массива
+void PrintIndex(int[,,] array)
 {
     for (int i = 0; i < array3D.GetLength(0); i++)
     {
@@ -24,17 +24,17 @@ void PrintIndex(int[,,] arr)
     }
 }
 
-// Функция заполнения 3D массива не повторяющимеся числами
-void FillArray(int[,,] arr)
+// Метод заполнения 3D массива не повторяющимеся числами
+void FillArray(int[,,] array)
 {
     int count = 10;
-    for (int i = 0; i < arr.GetLength(0); i++)
+    for (int i = 0; i < array.GetLength(0); i++)
     {
-        for (int j = 0; j < arr.GetLength(1); j++)
+        for (int j = 0; j < array.GetLength(1); j++)
         {
-            for (int k = 0; k < arr.GetLength(2); k++)
+            for (int k = 0; k < array.GetLength(2); k++)
             {
-                arr[k, i, j] += count;
+                array[k, i, j] += count;
                 count += 3;
             }
         }
